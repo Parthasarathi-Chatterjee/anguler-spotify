@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Add New Artist</h1>
+<div mat-dialog-content>
+   
+    <form [formGroup]="artistForm" (submit)="onSubmit()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>ArtistName </mat-label>
+            <input formControlName="artistName" matInput placeholder="artistName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Place</mat-label>
+            <input formControlName="Place" matInput placeholder="Place">
+
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date Of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Category</mat-label>
+            <input formControlName="category" matInput type="text" placeholder="category">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input formControlName="description" matInput type="text" placeholder="description">
+        </mat-form-field>
+        
+        <button type="submit" style="margin-left: 8px;" mat-raised-button color="primary">Save</button>
+    </form>
+    <p *ngIf="status">
+        Product Added.
+    </p>
+    <p *ngIf="error">
+        All Filds Required!
+    </p>
+</div>
+<div mat-dialog-action [align]="'end'">
+
+    <tr *ngFor="let item of artist ">
+        
+        <td>{{item.artistName}}</td>
+        <td>{{item.artistName}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.description}}</td>
+
+        <td>   
+            <button class="btn btn-del" (click)="deleteProduct(item)">Delte</button>
+        </td>
+        </tr>
+</div>

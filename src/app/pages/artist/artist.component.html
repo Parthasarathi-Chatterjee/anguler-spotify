@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<ng-container>
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>artist Name</th>
+                            <th>Song Ctagory</th>
+                            <th>artist Image</th>
+                        
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr *ngFor="let item of artist; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.description}}</td>
+                            <td><img style="width: 60px;" [src]="item.image" alt=""></td>
+                            
+                        
+                            <!-- <td>
+                                <button  (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                    
+                                  
+                            </td> -->
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
