@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="seller-auth">
+    <div class="sign-up">
+        <h1>Seller Sign-Up</h1>
+        <form [formGroup]="productForm" (submit)="signUp()" class="common-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Name </mat-label>
+                <input type="text" formControlName="name" matInput placeholder="Enter Name">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Password </mat-label>
+                <input type="password" formControlName="password" matInput placeholder="Enter password">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email </mat-label>
+                <input type="text" formControlName="email" matInput placeholder="Enter Email">
+            </mat-form-field>
+
+
+            <button mat-raised-button color="accent">Submit</button>
+        </form>
+    </div>
+</div>

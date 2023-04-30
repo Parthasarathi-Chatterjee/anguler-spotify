@@ -4,7 +4,8 @@ import { HeaderComponent } from './header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { MyDialogModule } from 'src/app/my-dialog/my-dialog.module';
 
 
 @NgModule({
@@ -15,9 +16,9 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
-    
-    
+    MatButtonModule,
+    MatDialogModule,
+    MyDialogModule
   ],
   exports:[
     HeaderComponent
